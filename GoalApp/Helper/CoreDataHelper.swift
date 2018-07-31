@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import CoreData
+
 struct CoreDataHelper {
     static let context: NSManagedObjectContext = {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
@@ -32,6 +33,18 @@ struct CoreDataHelper {
         }
         catch let error {
             print("Could not save\(error.localizedDescription)")
+        }
+    }
+    static func retrieveGoals() -> [Goal] {
+        do {
+            let fetchRequest = NSFetchRequest<Goal>(entityName: "Goal")
+            let results = try context.fetch(fetchRequest)
+            
+            return results
+        } catch let error {
+            print ("Could not fetch \(error.localizedDescription)")
+            return []
+        
         }
     }
 }
