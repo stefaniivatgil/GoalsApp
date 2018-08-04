@@ -27,8 +27,8 @@ class ViewController: UIViewController {
         super.viewWillAppear(animated)
         
 //       let fetch = Goal.fetchRequest()
-        let goals = CoreDataHelper.retrieveGoals()
-        print("here are your goals : \(goals)")
+//        let goals = CoreDataHelper.retrieveGoals()
+//        print("here are your goals : \(goals)")
 //        print("here are your goals : \(try! CoreDataHelper.context.fetch(fetch).count)")
         print("willlllll")
 //        print(try! CoreDataHelper.context.fetch(fetch).last?.goal)
@@ -38,8 +38,10 @@ class ViewController: UIViewController {
        
         
     }
+
+    @IBAction func fitnessButton(_ sender: UIButton) {
+        performSegue(withIdentifier: "goToFitness", sender: self)
+    }
     
-
-
 }
 

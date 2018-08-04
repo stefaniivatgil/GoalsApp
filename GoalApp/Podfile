@@ -6,7 +6,6 @@ target 'GoalApp' do
   use_frameworks!
 
   # Pods for GoalApp
+pod 'KDCalendar', '~> 1.6.0'
 
 end
-
-pod 'RSDayFlow'
